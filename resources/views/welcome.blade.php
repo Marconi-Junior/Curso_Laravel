@@ -217,6 +217,18 @@
                 </div>
             </main>
         </div>
+        <div>
+            <h2 style="color: white;">Teste com Rotas:</h2>
+            <form action="/contato" method="post">
+                <input type="text" name="nome" placeholder="Nome / POST" style="background-color: grey;">
+                <button style="color: white;">Enviar</button>
+            </form> <br>
+            <form action="/contato" method="post">
+                <input type="hidden" name="_method" value="put"> 
+                <input type="text" name="nome" placeholder="Nome / PUT" style="background-color: grey;">
+                <button style="color: white;">Enviar</button>
+            </form>
+        </div>
 
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
