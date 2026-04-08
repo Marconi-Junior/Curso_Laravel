@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\contatoController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 // Route::get('/contato/{id?}', function($id = null){
 //     return "Contato id = $id";
@@ -27,10 +28,11 @@ Route::get('/', function () {
 //Route::get('/contato',['uses'=>'contatoControler@index']); // sintaxe versões mais antigas
 
 Route::get('/contato',[contatoController::class, 'index']); // sintaxe laravel versão 8+
-
 Route::post('/contato', [contatoController::class, 'criar']);
-
 Route::put('/contato', [contatoController::class, 'editar']);
+
+
+Route::get('/', [HomeController::class, 'index'])->name('site.home');
 
 //Route::get('/admin/cursos', ['as'=>'admin.cursos', CursoController::class, 'index']);// sintaxe versões mais antigas
 Route::get('/admin/cursos', [CursoController::class, 'index'])->name('admin.cursos'); // sintaxe laravel versão 8+
