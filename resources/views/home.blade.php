@@ -25,7 +25,10 @@
         </div>
         @endforeach
     </div>
-        
+        <div class="row center">
+            {{ $cursos->links() }}
+
+        </div>
 
 </div>
     
